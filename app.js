@@ -17,6 +17,9 @@ mongoose.connect(process.env.MONGO_URL)
 
 
 app.use(express.urlencoded({extended: true}))
+app.get("/", (req,res)=> {
+    res.send("Hello World")
+})
 app.use(express.json()); //Untuk mengandle middleware dengan format JSON
 app.use("/api/auth", authRoute); // Memamnggil Setiap routes yang sudah di buat di .routes
 app.use("/api/user", userRoute);
